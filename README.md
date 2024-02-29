@@ -34,3 +34,10 @@ Applies voting fusion as in `exp1-voting.ipynb`. Produces metrics as RMSE, accur
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | timestamp | distance_wheelchair | speed_wheelchair | acceleration_wheelchair | distance_tracker | speed_tracker | acceleration_tracker | danger_tracker | distance_drone | speed_drone | acceleration_drone | distance_range | speed_range | acceleration_range | wheelchair_data |drone_data | tracker_data | range_data |
 
+## Acknowledgments
+This work was supported by the Swiss State Secretariat for Education,
+Research and lnnovation (SERI). The project has been selected within the
+European Union’s Horizon Europe research and innovation programme under grant
+agreement: HORIZON-CL4-2021-HUMAN-01-01. Views and opinions expressed are
+however those of the authors only and do not necessarily reflect those of the funding
+agencies, which cannot be held responsible for them.
