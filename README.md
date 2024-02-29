@@ -12,6 +12,7 @@ The dataset can be find on HuggingFace:
 Carlo Grigioni, Franca Corradini, Alessandro Antonucci, Jerome Guzzi and Francesco Flammini
 
 ## Code
+Scripts are set to be executed in the following order, after downloading the experiment files from HuggingFace:
 ### `bbox_pipeline.ipynb`
 Extracts frames from mp4 videos, applies adverse weather filters and uses YOLO to detect robomaters. Then computes bounding boxes appering width in pixels and distance between camera and approaching robomaster.
 ### `focal_length_tuning.ipynb`
@@ -22,10 +23,14 @@ Takes as input raw `.csv` files of experiment 1 for motion tracker, range sensor
 Takes as input raw `.csv` files of experiment 1 for motion tracker, range sensors, object detection bounding boxes. Performs the same steps of `exp1-distance-fusion.ipynb`. Evaluates the same danger function for for motion tracker, range sensors, object detection from wheelchair camera frames, and object detection from drone camera frames. Fusion is then performed by applying weighted average of individual sensors danger function. The Weighted average of danger function is compared with danger function evaluated on motion tracker data.
 ### `exp1-voting.ipynb`
 Takes as input raw `.csv` files of experiment 1 for motion tracker, range sensors, object detection bounding boxes. Performs the same steps of `exp1-distance-fusion.ipynb`. Evaluates the same danger function for for motion tracker, range sensors, object detection from wheelchair camera frames, and object detection from drone camera frames. Applies the same decision threshold on danger functions. Fusion is then performed by averaging individual binary decisions from sensors. It is then compared by binary metrics to with decisions evaluated on motion tracker data.
-### `fusion`
+### `fusion.ipynb`
 Takes as input preprocessed and sincronized data for experiment 1 from `pre_fusion_data.csv`. Defines the danger function.
 Applies distance fusion as in `exp1-distance-fusion.ipynb`. Defines an additional `decision` loop to make binary decisions that account for the last $n$ evaluations and make binary decisions more robust.
 Applies danger function fusion as in `exp1-weighted-fusion.ipynb`.
 Applies voting fusion as in `exp1-voting.ipynb`. Produces metrics as RMSE, accuracy, precision and recall.
-### `read_hdf5.py`
-Read hdf5 files extracted from ROS2 and produces .csv files.
+## Additional data
+### `pre_fusion_data.csv`
+| timestamp | distance_wheelchair | speed_wheelchair | acceleration_wheelchair | distance_tracker | speed_tracker | acceleration_tracker | danger_tracker | distance_drone | speed_drone | acceleration_drone | distance_range | speed_range | acceleration_range | wheelchair_data |drone_data | tracker_data | range_data |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| timestamp | distance_wheelchair | speed_wheelchair | acceleration_wheelchair | distance_tracker | speed_tracker | acceleration_tracker | danger_tracker | distance_drone | speed_drone | acceleration_drone | distance_range | speed_range | acceleration_range | wheelchair_data |drone_data | tracker_data | range_data |
+
