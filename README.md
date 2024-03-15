@@ -8,8 +8,10 @@ The dataset can be find on HuggingFace:
 ![gif](animation.gif)
 
 ## Paper
-#### Safe Road Crossing Decision for Autonomous Wheelchairs
+#### Safe Road-Crossing by Autonomous Wheelchairs: a Novel Dataset and its Experimental Evaluation
 Carlo Grigioni, Franca Corradini, Alessandro Antonucci, Jerome Guzzi and Francesco Flammini
+
+ArXiv: https://arxiv.org/abs/2403.08984
 
 ## Code
 Scripts are set to be executed in the following order, after downloading the experiment files from HuggingFace:
